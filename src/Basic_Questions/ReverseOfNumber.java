@@ -22,7 +22,7 @@ public class ReverseOfNumber {
     }
 
     public static void main(String[] args) {
-//        reverseNo_1(58999);
-        reverse_2(new Integer[]{20,30,50});
+        reverseNo_1(5793559);
+//        reverse_2(new Integer[]{20,30,50});
     }
 }
