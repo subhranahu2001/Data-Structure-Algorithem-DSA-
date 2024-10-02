@@ -43,7 +43,7 @@ public class SumOfAllDivisor {
 
 
 
-    //User function Template for Java
+
     static class Solution{
         static long sumOfDivisors(int N){
             long totalDiv = 0;

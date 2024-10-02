@@ -46,7 +46,7 @@ public class Question_242 {
             arr[s.charAt(i) - 'a']++;
         }
         for(int i = 0; i< t.length(); i++) {
-            int i1 = arr[t.charAt(i) - 'a']--;
+            arr[t.charAt(i) - 'a']--;
             if( arr[t.charAt(i) - 'a']< 0) {
                 return false;
             }
