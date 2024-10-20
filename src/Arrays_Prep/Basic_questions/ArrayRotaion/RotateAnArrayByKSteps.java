@@ -58,8 +58,8 @@ public class RotateAnArrayByKSteps {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the Steps to rotate :");
         int steps = sc.nextInt();
-        rotate(arr,steps);
-//        rotateUsingNoExtraSpace(arr,steps);
+//        rotate(arr,steps);
+        rotateUsingNoExtraSpace(arr,steps);
 
     }
 }
