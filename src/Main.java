@@ -1,4 +1,7 @@
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -13,7 +16,12 @@ public class Main {
 //            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
 //            System.out.println("i = " + i);
 
-        Date date = new Date(0);
-        System.out.println(date);
+        Set<Integer[]> set = new HashSet<>();
+        set.add(new Integer[]{10,20});
+        set.add(new Integer[]{20,10});
+        for (Integer[] i : set) {
+            System.out.println(Arrays.toString(i));
+        }
+        System.out.println(set.size());
         }
     }

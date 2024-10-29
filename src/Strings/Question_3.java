@@ -1,9 +1,7 @@
 package Strings;
 
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /*
 *  Longest Substring Without Repeating Characters
@@ -37,10 +35,25 @@ public class Question_3 {
 
     }
 
+    public static int find(String s) {
+        int maxLen = 0;
+        Set<Character> window = new HashSet<>();
+
+        int left = 0, right = 0;
+        while(right < s.length()) {
+            while(window.contains(s.charAt(right)))
+                window.remove(s.charAt(left++));
+            window.add(s.charAt(right++));
+            maxLen = Math.max(maxLen, right - left);
+        }
+        return maxLen;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         String s = sc.next();
         System.out.println(findLength(s));
+        System.out.println(find(s));
     }
 }
