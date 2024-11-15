@@ -7,27 +7,31 @@ import java.util.*;
 public class TopKFrequentNo {
 
     public static int[] topK(int[] arr,int k) {
-
-        if (arr.length < 2) {
+        if (k == arr.length) {
             return arr;
         }
-        Map<Integer,Integer> map = new TreeMap<>();
-        for (int j : arr) {
-            map.put(j, map.getOrDefault(j, 0) + 1);
+
+        Map<Integer,Integer> count= new HashMap<>();
+        for(int n : arr) {
+            count.put(n,count.getOrDefault(n , 0) + 1);
         }
 
-        int index = 0;
-        int[] newArr = new int[k];
-        for(int i : map.keySet()) {
-            newArr[index++] = i;
-            if (index == k) {
-                break;
+        Queue<Integer> heap = new PriorityQueue<>(
+                Comparator.comparingInt(count::get)
+        );
+        for(int n : count.keySet()) {
+            heap.add(n);
+            if(heap.size() > k) {
+                heap.poll();
             }
         }
+        int[] ans = new int[k];
+        for(int i = 0; i < k; i++) {
+            ans[i] = heap.poll();
+        }
 
-//        System.out.println(map);
+        return ans;
 
-        return newArr;
     }
 
     public static void main(String[] args) {
